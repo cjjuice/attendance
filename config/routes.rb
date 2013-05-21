@@ -1,4 +1,7 @@
 Attendance::Application.routes.draw do
+  resources :attendees
+
+
   resources :groups
 
 
