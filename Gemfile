@@ -22,6 +22,7 @@ group :assets do
 end
 
 gem 'angularjs-rails'
+gem 'ng-rails-csrf', :git => "git://github.com/xrd/ng-rails-csrf.git"
 
 gem 'bootstrap-sass', '~> 2.3.1.0'
 
