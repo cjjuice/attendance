@@ -13,7 +13,8 @@
 //= require_tree .
 //= require angular
 //= require angular-bootstrap
-//= require angular-resource'
+//= require angular-resource
+//= require angular-ui-bootstrap
 //= require ng-rails-csrf
 // Loads all Bootstrap javascripts
 //= require bootstrap
