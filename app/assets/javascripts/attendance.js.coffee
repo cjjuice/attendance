@@ -6,7 +6,7 @@ app.config ['$routeProvider', '$locationProvider', ($routeProvider, $locationPro
   $locationProvider.html5Mode(true)
 
   $routeProvider
-    .when '/', templateUrl: "/assets/templates/index.html"
+    .when '/', templateUrl: "/assets/templates/index.html.haml"
 ]
 
 # Resource factories
