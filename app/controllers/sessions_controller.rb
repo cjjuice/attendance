@@ -1,4 +1,5 @@
 class SessionsController < ApplicationController
+  layout false
   respond_to :json
  
   def create

@@ -1,4 +1,5 @@
 class UsersController < ApplicationController
+  layout false
   respond_to :json
 
   def create

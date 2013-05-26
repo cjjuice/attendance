@@ -10,11 +10,11 @@
 // WARNING: THE FIRST BLANK LINE MARKS THE END OF WHAT'S TO BE PROCESSED, ANY BLANK LINE SHOULD
 // GO AFTER THE REQUIRES BELOW.
 //
-//= require_tree .
 //= require angular
-//= require angular-resource
-//= require angular-ui-bootstrap
+//= require angular-ui-router
+//= require app/main
 //= require ng-rails-csrf
-//= require ./templates
-// Loads all Bootstrap javascripts
+//= require_tree ./app/config
+//= require_tree ./app/controllers
 //= require bootstrap
+//= require_self

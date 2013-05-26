@@ -1,14 +1,9 @@
 Attendance::Application.routes.draw do
   resources :attendees
-
-
   resources :groups
-
-
   resources :users
-
-
-  root to: 'application#index'
+  
+  match '/' => 'application#index'
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

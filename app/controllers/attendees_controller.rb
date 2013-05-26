@@ -1,4 +1,5 @@
 class AttendeesController < ApplicationController
+  layout false
   respond_with :json
 
   def index

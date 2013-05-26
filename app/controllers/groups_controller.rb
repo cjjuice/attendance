@@ -1,4 +1,5 @@
 class GroupsController < ApplicationController
+  layout false
   respond_with :json
 
   def index
