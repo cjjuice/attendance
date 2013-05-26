@@ -1,5 +1,5 @@
 # Module
-app = angular.module("Attendance", ["ngResource", "ng-rails-csrf"])
+app = angular.module("Attendance", ["ngResource", "templates", "ng-rails-csrf"])
 
 # Routes
 app.config ['$routeProvider', '$locationProvider', ($routeProvider, $locationProvider)->

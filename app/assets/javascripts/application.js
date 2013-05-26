@@ -15,5 +15,6 @@
 //= require angular-resource
 //= require angular-ui-bootstrap
 //= require ng-rails-csrf
+//= require ./templates
 // Loads all Bootstrap javascripts
 //= require bootstrap
