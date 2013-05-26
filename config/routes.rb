@@ -1,9 +1,16 @@
 Attendance::Application.routes.draw do
-  resources :attendees
-  resources :groups
-  resources :users
+  root to: 'home#index'
+  
+  namespace :api do
+    resources :attendees
+    resources :groups
+    resources :users
+    resources :sessions
+  end
   
   match '/' => 'application#index'
+  match '/groups' => 'home#index'
+  match '/groups/*page' => 'home#index'
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

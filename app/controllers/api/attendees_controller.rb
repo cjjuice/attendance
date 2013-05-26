@@ -1,7 +1,4 @@
-class AttendeesController < ApplicationController
-  layout false
-  respond_with :json
-
+class Api::AttendeesController < Api::BaseController
   def index
     respond_with current_group.attendees.all
   end

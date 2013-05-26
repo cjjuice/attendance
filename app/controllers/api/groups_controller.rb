@@ -1,7 +1,4 @@
-class GroupsController < ApplicationController
-  layout false
-  respond_with :json
-
+class Api::GroupsController < AApi::BaseController
   def index
     respond_with current_user.groups.all
   end

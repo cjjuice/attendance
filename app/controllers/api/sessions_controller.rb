@@ -1,7 +1,4 @@
-class SessionsController < ApplicationController
-  layout false
-  respond_to :json
- 
+class Api::SessionsController < Api::BaseController
   def create
     user = User.find_by_email(params[:email])
     if user && user.authenticate(params[:password])

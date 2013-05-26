@@ -1,7 +1,4 @@
-class UsersController < ApplicationController
-  layout false
-  respond_to :json
-
+class Api::UsersController < Api::BaseController
   def create
     user = User.create(params[:user])
     session[:user_id] = user.id if user.save
