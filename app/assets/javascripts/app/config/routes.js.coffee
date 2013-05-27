@@ -16,27 +16,27 @@ app.config ($stateProvider, $urlRouterProvider) ->
           controller: "ApplicationController"
           templateUrl: "default.html"
 		
-    # Lists
-    .state "lists",
+    # groups
+    .state "groups",
       parent: "default"
-      url: "/lists"
+      url: "/groups"
       views:
         "":
-          controller: "ListsController"
-          templateUrl: "lists-index.html"
+          controller: "GroupsController"
+          templateUrl: "groups-index.html"
 
     .state "new",
-      parent: "lists"
+      parent: "groups"
       url: "/new"
       views:
         "@default":
-          controller: "ListsController"
-          templateUrl: "lists-new.html"
+          controller: "GroupsController"
+          templateUrl: "groups-new.html"
 
     .state "show",
-      parent: "lists"
+      parent: "groups"
       url: "/:id/show"
       views:
         "@default":
-          controller: "ListsController"
-          templateUrl: "lists-show.html"
+          controller: "GroupsController"
+          templateUrl: "groups-show.html"
