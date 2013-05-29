@@ -1,0 +1,14 @@
+<form ng-submit="create()">
+	<input type="hidden" ng-model="user.id" />
+ 
+	<label for="email">Email</label>
+	<input type="text" ng-model="user.email" />
+ 
+	<label for="password">Password</label>
+	<input type="password" ng-model="user.password" />
+
+	<label for="password_confirmation">Password Confirmation</label>
+	<input type="password" ng-model="user.password_confirmation" />
+ 
+	<button type="submit">Sign up</button>
+</form>	

@@ -1,10 +1,10 @@
-app.controller "GroupsController", ($scope, $http, $location, $state, $stateParams) ->
+app.controller "GroupsCtrl", ($scope, $http, $location, $state, $stateParams) ->
  
   # =========================================================================
   # Initialize
   # =========================================================================
 
-  $scope.lists = {}
+  $scope.groups = {}
   if $state.current.name == 'groups'
     $http.get("api/groups"
 
@@ -14,3 +14,5 @@ app.controller "GroupsController", ($scope, $http, $location, $state, $statePara
 
     # failure
     ), (error) ->
+	
+  return false	

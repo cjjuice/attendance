@@ -13,8 +13,8 @@
 //= require angular
 //= require angular-ui-router
 //= require app/main
-//= require ng-rails-csrf
 //= require_tree ./app/config
+//= require ng-rails-csrf
 //= require_tree ./app/controllers
 //= require bootstrap
 //= require_self
