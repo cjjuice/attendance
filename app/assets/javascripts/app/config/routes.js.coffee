@@ -16,22 +16,24 @@ app.config ($stateProvider, $urlRouterProvider) ->
           controller: "ApplicationController"
           templateUrl: "/assets/layouts/default.html.erb"
 
-    #users
-    .state "users",
+    #signup
+    .state "signup",
       parent: "default"
-      url: "/users"
+      url: "/signup"
       views:
         "":
           controller: "UsersCtrl"
-          templateUrl: "/assets/users/index.html.erb"
-    .state "new",
-      parent: "users"
-      url: "/new"
-      views:
-        "@default":
-          controller: "UsersCtrl"
           templateUrl: "/assets/users/new.html.erb"
-		
+          
+    #sessions
+    .state "login",
+      parent: "default"
+      url: "/login"
+      views:
+        "":
+          controller: "SessionsCtrl"
+          templateUrl: "/assets/sessions/new.html.erb"      
+          
     # groups
     .state "groups",
       parent: "default"
@@ -41,13 +43,13 @@ app.config ($stateProvider, $urlRouterProvider) ->
           controller: "GroupsCtrl"
           templateUrl: "/assets/groups/index.html.erb"
 
-    #.state "new",
-    #  parent: "groups"
-    #  url: "/new"
-    #  views:
-    #    "@default":
-    #      controller: "GroupsCtrl"
-    #      templateUrl: "/assets/groups/new.html.erb"
+    .state "groupsNew",
+      parent: "groups"
+      url: "/new"
+      views:
+        "@default":
+          controller: "GroupsCtrl"
+          templateUrl: "/assets/groups/new.html.erb"
 
     .state "show",
       parent: "groups"
@@ -56,3 +58,4 @@ app.config ($stateProvider, $urlRouterProvider) ->
         "@default":
           controller: "GroupsCtrl"
           templateUrl: "/assets/groups/show.html.erb"
+          

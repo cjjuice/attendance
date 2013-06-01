@@ -3,14 +3,12 @@ class Api::SessionsController < Api::BaseController
     user = User.find_by_email(params[:email])
     if user && user.authenticate(params[:password])
       session[:user_id] = user.id
-      respond_with :api, true
-    else
-      respond_with :api, false
+      respond_with :api, user
     end
   end
 
   def destroy
     session[:user_id] = nil
-    respond_with :api, true
+    redirect_to root_url
   end
 end

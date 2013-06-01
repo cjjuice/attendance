@@ -18,4 +18,4 @@ app.controller "UsersCtrl", ($scope, $http, $location, $state, $stateParams) ->
        # failure
         ), (error) ->
 	
-  return false	
+  return false

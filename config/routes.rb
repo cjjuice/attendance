@@ -5,7 +5,7 @@ Attendance::Application.routes.draw do
     resources :attendees
     resources :groups
     resources :users
-    resources :sessions
+    resource  :sessions
   end
   
   match '/' => 'application#index'
@@ -13,8 +13,11 @@ Attendance::Application.routes.draw do
   match '/groups/*page' => 'application#index'
   
   match '/' => 'application#index'
-  match '/users' => 'application#index'
-  match '/users/*page' => 'application#index'
+  
+  match '/signup' => 'application#index'
+  match '/login'  => 'application#index'
+  match '/logout' => 'api/sessions#destroy'
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
