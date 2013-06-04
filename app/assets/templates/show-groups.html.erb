@@ -1,0 +1,22 @@
+<h1>{{group.name}}</h1>
+<form ng-submit="checkinAttendee()">
+  <input type="text" ng-model="attendee" placeholder="Checkin attendee" typeahead="attendee.name for attendee in missingAttendees | filter:$viewValue">
+  <input type="submit" value="Checkin">
+</form>
+<h2>Not Here</h2>
+<ul>
+  <li ng-repeat="attendee in missingAttendees">
+    {{attendee.name}}
+  </li>
+</ul>
+<h2>Here</h2>
+<ul>
+  <li ng-repeat="attendee in presentAttendees">
+    {{attendee.name}}
+  </li>
+</ul>
+<form ng-submit="addAttendee()">
+  <input type="text" ng-model="newAttendee.name" placeholder="Add Attendee">
+  <input type="submit" value="Add">
+</form>
+<button ng-click="resetAttendees()" class="btn btn-danger">Reset</button>

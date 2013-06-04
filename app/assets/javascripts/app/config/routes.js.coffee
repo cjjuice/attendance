@@ -16,7 +16,7 @@ app.config ($stateProvider, $urlRouterProvider) ->
           controller: "ApplicationController"
           templateUrl: "/assets/layouts/default.html.erb"
 
-    #signup
+    # home
     .state "home",
       parent: "default"
       url: "/"
@@ -34,13 +34,13 @@ app.config ($stateProvider, $urlRouterProvider) ->
           controller: "GroupsCtrl"
           templateUrl: "/assets/groups.html.erb"
     
-    # checkins
-    .state "checkin",
-      parent: "default"
-      url: "/checkin"
+    .state "show",
+      parent: "groups"
+      url: "/:id"
       views:
-        "":
-          controller: "CheckinCtrl"
-          templateUrl: "/assets/checkin.html.erb"      
+        "@default":
+          controller: "GroupsCtrl"
+          templateUrl: "/assets/show-groups.html.erb"
+      
           
           

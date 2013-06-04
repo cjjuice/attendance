@@ -11,11 +11,18 @@ class Api::AttendeesController < Api::BaseController
     respond_with :api, current_group.attendees.create(params[:attendee])
   end
 
-  def update
-    respond_with :api, current_group.attendees.update(params[:id], params[:attendee])
-  end
-
   def destroy
     respond_with :api, current_group.attendees.destroy(params[:id])
   end
+  
+  def checkin
+    attendee = current_group.attendees.where(name: params[:name]).first
+    attendee.here = true
+    attendee.save
+    respond_with :api, attendee
+  end
+  
+  def reset
+    respond_with :api, current_group.attendees.each {|a| a.here = false ; a.save} 
+  end  
 end

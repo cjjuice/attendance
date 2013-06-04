@@ -2,10 +2,14 @@ Attendance::Application.routes.draw do
   root to: 'application#index'
   
   namespace :api do
+    resources :groups do
+      resources :attendees
+    end
     resources :attendees
-    resources :groups
     resources :users
     resource  :sessions
+    match 'checkin' => 'attendees#checkin'
+    match 'reset' => 'attendees#reset'
   end
   
   match '/' => 'application#index'
@@ -17,6 +21,7 @@ Attendance::Application.routes.draw do
   match '/signup' => 'application#index'
   match '/login'  => 'application#index'
   match '/logout' => 'api/sessions#destroy'
+  
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

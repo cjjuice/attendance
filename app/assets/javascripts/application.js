@@ -12,9 +12,10 @@
 //
 //= require angular
 //= require angular-ui-router
+//= require angular-ui-bootstrap
+//= require underscore
 //= require app/main
 //= require_tree ./app/config
 //= require ng-rails-csrf
 //= require_tree ./app/controllers
-//= require bootstrap
 //= require_self

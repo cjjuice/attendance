@@ -1,12 +1,12 @@
 <h1>Log In</h1>
 <form ng-submit="createSession()">
-	<input type="hidden" ng-model="user.id" />
+	<input type="hidden" ng-model="session.id" />
  
 	<label for="email">Email</label>
-	<input type="text" ng-model="user.email" />
+	<input type="text" ng-model="session.email" />
  
 	<label for="password">Password</label>
-	<input type="password" ng-model="user.password" />
+	<input type="password" ng-model="session.password" />
 
 	<button type="submit">Log in</button>
 </form>	

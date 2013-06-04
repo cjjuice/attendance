@@ -1,2 +1,2 @@
 # Create 'app' angular application (module)
-@app = angular.module("app", ["ui.compat", "ng-rails-csrf"])
+@app = angular.module("app", ["ui.compat", "ng-rails-csrf", "ui.bootstrap"])

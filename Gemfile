@@ -20,6 +20,7 @@ group :assets do
   gem 'uglifier', '>= 1.0.3'
 end
 
+gem 'underscore-rails'
 gem 'angularjs-rails'
 gem 'ng-rails-csrf', :git => "git://github.com/xrd/ng-rails-csrf.git"
 
