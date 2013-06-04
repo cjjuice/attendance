@@ -1,4 +1,6 @@
 class Api::GroupsController < Api::BaseController
+  before_filter :authorize 
+  
   def index
     respond_with :api, current_user.groups.all
   end

@@ -7,17 +7,27 @@
   </div>  
 </form>
 <h2>Not Here</h2>
-<ul>
-  <li ng-repeat="attendee in missingAttendees">
-    {{attendee.name}}
-  </li>
-</ul>
+<table class="table">
+  <tr>
+  <th>Name</th>
+  <th>Delete</th>
+  </tr>
+  <tr ng-repeat="attendee in missingAttendees">
+    <td>{{attendee.name}}</td>
+    <td><button ng-click="destroyAttendee(attendee.id)"><i class="icon-trash"></i></button></td>
+  </tr>
+</table>
 <h2>Here</h2>
-<ul>
-  <li ng-repeat="attendee in presentAttendees">
-    {{attendee.name}}
-  </li>
-</ul>
+<table class="table">
+  <tr>
+  <th>Name</th>
+  <th>Delete</th>
+  </tr>
+  <tr ng-repeat="attendee in presentAttendees">
+    <td>{{attendee.name}}</td>
+    <td><button ng-click="destroyAttendee(attendee.id)"><i class="icon-trash"></i></button></td>
+  </tr>
+</table>
 <form ng-submit="addAttendee()">
   <div class="input-append">
     <input type="text" ng-model="newAttendee.name" placeholder="Add Attendee" class="span3" id="appendedInputButton">

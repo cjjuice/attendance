@@ -59,20 +59,19 @@ app.controller "GroupsCtrl", ($scope, $http, $location, $state, $stateParams) ->
   # =========================================================================
   # Destroy Group
   # =========================================================================
-    $scope.destroyGroup = (groupId) ->
-      result = confirm("Are you sure?")
-      if result = true
-        $http.delete("/api/groups/#{groupId}",
+   $scope.destroyGroup = (groupId) ->
+     if confirm("Are you sure?")
+       $http.delete("/api/groups/#{groupId}"
       
-      # success
-        ).then ((response) ->
-          $scope.groups = _($scope.groups).reject((el) ->
-            el.id is groupId
-          )
+       # success
+       ).then ((response) ->
+         $scope.groups = _($scope.groups).reject((el) ->
+           el.id is groupId
+         )
 
       # failure
-        ), (error) -> 
-          console.log("Fail")      
+       ), (error) -> 
+             
     
     
  # =========================================================================
@@ -90,7 +89,27 @@ app.controller "GroupsCtrl", ($scope, $http, $location, $state, $stateParams) ->
 
         # failure
          ), (error) ->
-         
+           
+  # =========================================================================
+  # Destroy Attendee
+  # =========================================================================
+   $scope.destroyAttendee = (attendeeId) ->
+     if confirm("Are you sure?")
+       $http.delete("/api/attendees/#{attendeeId}?group_id=#{$scope.group.id}"
+      
+       # success
+       ).then ((response) ->
+         $scope.missingAttendees = _($scope.missingAttendees).reject((el) ->
+           el.id is attendeeId
+         )
+         $scope.presentAttendees = _($scope.presentAttendees).reject((el) ->
+           el.id is attendeeId
+         )         
+        
+       # failure
+       ), (error) ->   
+           
+
   # =========================================================================
   # Checkin Attendee
   # =========================================================================
