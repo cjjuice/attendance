@@ -40,6 +40,40 @@ app.controller "GroupsCtrl", ($scope, $http, $location, $state, $stateParams) ->
         
     # failure
     ), (error) ->	
+
+ # =========================================================================
+ # Add Group
+ # =========================================================================
+   $scope.addGroup = ->
+     $http.post("/api/groups",
+       name: $scope.newGroup.name
+
+       # success
+         ).then ((response) ->
+           $scope.groups.push(response.data)
+           $scope.newGroup = {}
+
+        # failure
+         ), (error) ->    
+  
+  # =========================================================================
+  # Destroy Group
+  # =========================================================================
+    $scope.destroyGroup = (groupId) ->
+      result = confirm("Are you sure?")
+      if result = true
+        $http.delete("/api/groups/#{groupId}",
+      
+      # success
+        ).then ((response) ->
+          $scope.groups = _($scope.groups).reject((el) ->
+            el.id is groupId
+          )
+
+      # failure
+        ), (error) -> 
+          console.log("Fail")      
+    
     
  # =========================================================================
  # Add Attendee

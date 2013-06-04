@@ -1,7 +1,10 @@
+<a href="/groups"><i class="icon-arrow-left"></i></a>
 <h1>{{group.name}}</h1>
 <form ng-submit="checkinAttendee()">
-  <input type="text" ng-model="attendee" placeholder="Checkin attendee" typeahead="attendee.name for attendee in missingAttendees | filter:$viewValue">
-  <input type="submit" value="Checkin">
+  <div class="input-append">
+    <input type="text" ng-model="attendee" placeholder="Checkin attendee..." typeahead="attendee.name for attendee in missingAttendees | filter:$viewValue" class="span3" id="appendedInputButton">
+    <button type="submit"  class="btn btn-primary">Checkin</button>
+  </div>  
 </form>
 <h2>Not Here</h2>
 <ul>
@@ -16,7 +19,9 @@
   </li>
 </ul>
 <form ng-submit="addAttendee()">
-  <input type="text" ng-model="newAttendee.name" placeholder="Add Attendee">
-  <input type="submit" value="Add">
+  <div class="input-append">
+    <input type="text" ng-model="newAttendee.name" placeholder="Add Attendee" class="span3" id="appendedInputButton">
+    <button type="submit" class="btn" ><i class="icon-plus"></i></button>
+  </div> 
 </form>
 <button ng-click="resetAttendees()" class="btn btn-danger">Reset</button>
